@@ -2,13 +2,9 @@ import { isKeyPressed } from "../input";
 import { KeyCode } from "../types";
 
 export class Menu {
-    enabled: boolean;
-    onClose: ((menu: Menu) => void) | null;
+    onClose?: (menu: Menu) => void;
 
-    constructor() {
-        this.enabled = false;
-        this.onClose = null;
-    }
+    constructor() {}
 
     update() {
         if (isKeyPressed(KeyCode.ESCAPE)) {

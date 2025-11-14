@@ -7,6 +7,7 @@ const ROW_HEIGHT = 16;
 export class ListWindow extends Window {
     choices: string[];
     index: number;
+    onSelect?: (index: number) => void;
 
     constructor(
         x: number,
@@ -25,6 +26,10 @@ export class ListWindow extends Window {
             this.index--;
         } else if (isKeyPressed(KeyCode.S)) {
             this.index++;
+        }
+
+        if (isKeyPressed(KeyCode.E)) {
+            this.onSelect?.(this.index);
         }
     }
 

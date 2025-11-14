@@ -1,11 +1,14 @@
 import { isKeyDown } from "./input";
-import { KeyCode } from "./types";
+import { Inventory } from "./inventory";
+import { KeyCode, Recipe } from "./types";
 
 export class Player {
     x: number;
     y: number;
     width: number;
     height: number;
+    recipes: Recipe[] = [];
+    inventory: Inventory = new Inventory();
 
     constructor(x: number, y: number) {
         this.x = x;
