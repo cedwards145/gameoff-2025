@@ -1,8 +1,16 @@
 import { RECIPES } from "./data/recipes";
-import { clearPressedKeys, handleKeyDown, handleKeyUp } from "./input";
+import {
+    clearPressedKeys,
+    handleKeyDown,
+    handleKeyUp,
+    isKeyPressed,
+} from "./input";
 import { InventoryMenu } from "./menus/inventoryMenu";
+import { Menu } from "./menus/menu";
 import { RecipeShopMenu } from "./menus/recipeShopMenu";
-import { Item, Position } from "./types";
+import { intersects } from "./physics";
+import { Player } from "./player";
+import { Item, KeyCode, Position } from "./types";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const context = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -29,8 +37,23 @@ const inventory: Item[] = [
     { name: "Mandrake Root", quantity: 5 },
 ];
 
-// const inventoryMenu = new InventoryMenu(inventory);
-const recipeShopMenu = new RecipeShopMenu(RECIPES);
+const player = new Player(0, 0);
+const kitchen = { x: 32, y: 32, width: 64, height: 64 };
+const recipeShop = { x: 128, y: 32, width: 64, height: 64 };
+
+const menuStack: Menu[] = [];
+
+function openMenu(menu: Menu) {
+    menu.onClose = handleMenuClose;
+    menuStack.push(menu);
+}
+
+function handleMenuClose(menu: Menu) {
+    const index = menuStack.indexOf(menu);
+    if (index > -1) {
+        menuStack.splice(index, 1);
+    }
+}
 
 canvas.onmousemove = (e: MouseEvent) => {
     const rect = (e.target as HTMLElement).getBoundingClientRect();
@@ -42,7 +65,15 @@ document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
 
 function update(): void {
-    recipeShopMenu.update();
+    if (menuStack.length == 0) {
+        player.update();
+
+        if (intersects(player, recipeShop) && isKeyPressed(KeyCode.E)) {
+            openMenu(new RecipeShopMenu(RECIPES));
+        }
+    }
+
+    menuStack.forEach((menu) => menu.update());
     clearPressedKeys();
 }
 
@@ -52,9 +83,29 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillRect(0, 0, WIDTH, HEIGHT);
 
     context.scale(SCALE, SCALE);
-    recipeShopMenu.draw(context);
-    context.fillStyle = "red";
 
+    // Recipe Shop
+    context.fillStyle = "grey";
+    context.fillRect(
+        recipeShop.x,
+        recipeShop.y,
+        recipeShop.width,
+        recipeShop.height
+    );
+    context.fillStyle = "black";
+    context.fillText("Recipes", recipeShop.x, recipeShop.y);
+
+    // Kitchen
+    context.fillStyle = "grey";
+    context.fillRect(kitchen.x, kitchen.y, kitchen.width, kitchen.height);
+    context.fillStyle = "black";
+    context.fillText("Kitchen", kitchen.x, kitchen.y);
+
+    player.draw(context);
+
+    menuStack.forEach((menu) => menu.draw(context));
+
+    context.fillStyle = "red";
     context.fillRect(mousePosition.x - 1, mousePosition.y - 1, 3, 3);
 
     context.resetTransform();

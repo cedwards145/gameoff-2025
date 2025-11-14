@@ -1,14 +1,17 @@
 import { ListWindow } from "../windows/listWindow";
 import { TextWindow } from "../windows/textWindow";
 import { Recipe } from "../types";
+import { Menu } from "./menu";
 
-export class RecipeShopMenu {
+export class RecipeShopMenu extends Menu {
     recipes: Recipe[];
     listWindow: ListWindow;
     descriptionWindow: TextWindow;
     ingredientsWindow: TextWindow;
 
     constructor(recipes: Recipe[]) {
+        super();
+
         this.recipes = recipes;
         this.listWindow = new ListWindow(
             10,
@@ -22,6 +25,7 @@ export class RecipeShopMenu {
     }
 
     update(): void {
+        super.update();
         this.listWindow.update();
 
         const recipe = this.recipes[this.listWindow.index];
