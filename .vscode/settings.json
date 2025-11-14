@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "notebook.diff.overviewRuler": true,
+    "editor.rulers": [
+        80
+    ]
+}
