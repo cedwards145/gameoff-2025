@@ -1,3 +1,4 @@
+import { INGREDIENTS } from "./data/ingredients";
 import { RECIPES } from "./data/recipes";
 import {
     clearPressedKeys,
@@ -7,6 +8,7 @@ import {
 } from "./input";
 import { Inventory } from "./inventory";
 import { CraftingMenu } from "./menus/craftingMenu";
+import { IngredientsShopMenu } from "./menus/ingredientsShopMenu";
 import { InventoryMenu } from "./menus/inventoryMenu";
 import { Menu } from "./menus/menu";
 import { RecipeShopMenu } from "./menus/recipeShopMenu";
@@ -42,6 +44,7 @@ const inventory = new Inventory([
 const player = new Player(0, 0);
 const kitchen = { x: 32, y: 32, width: 64, height: 64 };
 const recipeShop = { x: 128, y: 32, width: 64, height: 64 };
+const ingredients = { x: 32, y: 128, width: 64, height: 64 };
 
 const menuStack: Menu[] = [];
 
@@ -76,6 +79,9 @@ function update(): void {
         if (intersects(player, kitchen) && isKeyPressed(KeyCode.E)) {
             openMenu(new CraftingMenu(player));
         }
+        if (intersects(player, ingredients) && isKeyPressed(KeyCode.E)) {
+            openMenu(new IngredientsShopMenu(INGREDIENTS, player));
+        }
         if (isKeyPressed(KeyCode.ESCAPE)) {
             openMenu(new InventoryMenu(player.inventory));
         }
@@ -109,6 +115,17 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillRect(kitchen.x, kitchen.y, kitchen.width, kitchen.height);
     context.fillStyle = "black";
     context.fillText("Kitchen", kitchen.x, kitchen.y);
+
+    // Ingredients
+    context.fillStyle = "grey";
+    context.fillRect(
+        ingredients.x,
+        ingredients.y,
+        ingredients.width,
+        ingredients.height
+    );
+    context.fillStyle = "black";
+    context.fillText("Ingredients", ingredients.x, ingredients.y);
 
     player.draw(context);
 

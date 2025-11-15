@@ -17,10 +17,10 @@ export class InventoryMenu extends Menu {
             40,
             200,
             200,
-            inventory.itemQuantities.map(
-                (itemQuantity) =>
-                    itemQuantity.item.name + " x" + itemQuantity.quantity
-            )
+            inventory.itemQuantities.map((itemQuantity) => ({
+                text: itemQuantity.item.name + " x" + itemQuantity.quantity,
+                enabled: true,
+            }))
         );
         this.descriptionWindow = new TextWindow(10, 10, 200, 24);
     }

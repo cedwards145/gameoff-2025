@@ -31,7 +31,10 @@ export class RecipeShopMenu extends Menu {
         this.recipes = this.allRecipes.filter(
             (recipe) => this.player.recipes.indexOf(recipe) < 0
         );
-        this.listWindow.choices = this.recipes.map((recipe) => recipe.name);
+        this.listWindow.choices = this.recipes.map((recipe) => ({
+            text: recipe.name,
+            enabled: true,
+        }));
         if (this.listWindow.index >= this.listWindow.choices.length) {
             this.listWindow.index = this.listWindow.choices.length - 1;
         }

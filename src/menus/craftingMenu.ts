@@ -11,21 +11,25 @@ export class CraftingMenu extends Menu {
         super();
 
         this.player = player;
-        this.listWindow = new ListWindow(
-            0,
-            0,
-            200,
-            200,
-            player.recipes.map((recipe) => recipe.name)
-        );
+        this.listWindow = new ListWindow(0, 0, 200, 200, []);
         this.listWindow.onSelect = (index) => this.handleCraft(index);
+        this.updateChoices();
+    }
+
+    updateChoices() {
+        this.listWindow.choices = this.player.recipes.map((recipe) => ({
+            text: recipe.name,
+            enabled: this.player.inventory.canCraft(recipe),
+        }));
     }
 
     handleCraft(index: number) {
         const recipe = this.player.recipes[index];
         if (recipe) {
+            recipe.ingredients.forEach((ingredient) =>
+                this.player.inventory.removeItem({ name: ingredient }, 1)
+            );
             this.player.inventory.addItem({ name: recipe.name }, 1);
-            console.log(this.player.inventory);
         }
     }
 

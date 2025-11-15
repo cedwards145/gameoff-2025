@@ -1,4 +1,4 @@
-import { Item, KeyCode } from "./types";
+import { Item, KeyCode, Recipe } from "./types";
 
 interface ItemQuantity {
     item: Item;
@@ -29,10 +29,24 @@ export class Inventory {
             const itemQuantity = this.itemQuantities[index];
             if (itemQuantity.item.name === item.name) {
                 itemQuantity.quantity += quantity;
+
+                if (itemQuantity.quantity <= 0) {
+                    this.itemQuantities.splice(index, 1);
+                }
                 return;
             }
         }
 
         this.itemQuantities.push({ item: item, quantity: quantity });
+    }
+
+    removeItem(item: Item, quantity: number) {
+        this.addItem(item, -1 * quantity);
+    }
+
+    canCraft(recipe: Recipe): boolean {
+        return recipe.ingredients
+            .map((ingredient) => this.getQuantity({ name: ingredient }))
+            .every((quantity) => quantity > 0);
     }
 }

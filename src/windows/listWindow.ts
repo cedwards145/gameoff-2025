@@ -4,8 +4,13 @@ import { KeyCode } from "../types";
 
 const ROW_HEIGHT = 16;
 
+interface Choice {
+    text: string;
+    enabled: boolean;
+}
+
 export class ListWindow extends Window {
-    choices: string[];
+    choices: Choice[];
     index: number;
     onSelect?: (index: number) => void;
 
@@ -14,7 +19,7 @@ export class ListWindow extends Window {
         y: number,
         width: number,
         height: number,
-        choices: string[]
+        choices: Choice[]
     ) {
         super(x, y, width, height);
         this.choices = choices;
@@ -29,7 +34,10 @@ export class ListWindow extends Window {
         }
 
         if (isKeyPressed(KeyCode.E)) {
-            this.onSelect?.(this.index);
+            const choice = this.choices[this.index];
+            if (choice && choice.enabled) {
+                this.onSelect?.(this.index);
+            }
         }
     }
 
@@ -55,9 +63,11 @@ export class ListWindow extends Window {
                 );
             }
 
-            context.fillStyle = "black";
+            const choice = this.choices[currentIndex];
+
+            context.fillStyle = choice.enabled ? "black" : "red";
             context.fillText(
-                this.choices[currentIndex],
+                choice.text,
                 this.x + this.padding * 2,
                 this.y +
                     this.padding * 2 +
