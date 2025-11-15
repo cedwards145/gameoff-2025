@@ -52,7 +52,7 @@ export class ListWindow extends Window {
             currentIndex++
         ) {
             if (currentIndex === this.index) {
-                context.fillStyle = "blue";
+                context.fillStyle = "lightgrey";
                 context.fillRect(
                     this.x + this.padding,
                     this.y +
@@ -65,7 +65,7 @@ export class ListWindow extends Window {
 
             const choice = this.choices[currentIndex];
 
-            context.fillStyle = choice.enabled ? "black" : "red";
+            context.fillStyle = choice.enabled ? "black" : "grey";
             context.fillText(
                 choice.text,
                 this.x + this.padding * 2,
