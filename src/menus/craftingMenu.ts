@@ -31,6 +31,7 @@ export class CraftingMenu extends Menu {
             );
             this.player.inventory.addItem({ name: recipe.name }, 1);
         }
+        this.updateChoices();
     }
 
     update(): void {

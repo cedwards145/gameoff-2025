@@ -1,3 +1,4 @@
+import { Adventurer } from "./adventurer";
 import { INGREDIENTS } from "./data/ingredients";
 import { RECIPES } from "./data/recipes";
 import {
@@ -11,9 +12,11 @@ import { CraftingMenu } from "./menus/craftingMenu";
 import { IngredientsShopMenu } from "./menus/ingredientsShopMenu";
 import { InventoryMenu } from "./menus/inventoryMenu";
 import { Menu } from "./menus/menu";
+import { OrdersMenu } from "./menus/ordersMenu";
 import { RecipeShopMenu } from "./menus/recipeShopMenu";
 import { intersects } from "./physics";
 import { Player } from "./player";
+import { Restaurant } from "./restaurant";
 import { Item, KeyCode, Position } from "./types";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -41,12 +44,19 @@ const inventory = new Inventory([
     // { item: { name: "Mandrake Root" }, quantity: 5 },
 ]);
 
-const player = new Player(0, 0);
-const kitchen = { x: 32, y: 32, width: 64, height: 64 };
-const recipeShop = { x: 128, y: 32, width: 64, height: 64 };
+const player = new Player(104, 104);
+const recipeShop = { x: 32, y: 32, width: 64, height: 64 };
 const ingredients = { x: 32, y: 128, width: 64, height: 64 };
-
+const kitchen = { x: 128, y: 32, width: 64, height: 64 };
+const counter = new Restaurant(128, 128, 64, 64);
+const dungeon = { x: 512, y: 128, width: 64, height: 64 };
 const menuStack: Menu[] = [];
+
+const entities = [
+    player,
+    new Adventurer(512, 150, counter, dungeon, RECIPES[0]),
+    new Adventurer(400, 150, counter, dungeon, RECIPES[1]),
+];
 
 function openMenu(menu: Menu) {
     menu.onClose = handleMenuClose;
@@ -71,7 +81,7 @@ document.onkeyup = handleKeyUp;
 
 function update(): void {
     if (menuStack.length == 0) {
-        player.update();
+        entities.forEach((entity) => entity.update());
 
         if (intersects(player, recipeShop) && isKeyPressed(KeyCode.E)) {
             openMenu(new RecipeShopMenu(RECIPES, player));
@@ -81,6 +91,9 @@ function update(): void {
         }
         if (intersects(player, ingredients) && isKeyPressed(KeyCode.E)) {
             openMenu(new IngredientsShopMenu(INGREDIENTS, player));
+        }
+        if (intersects(player, counter) && isKeyPressed(KeyCode.E)) {
+            openMenu(new OrdersMenu(player, counter));
         }
         if (isKeyPressed(KeyCode.ESCAPE)) {
             openMenu(new InventoryMenu(player.inventory));
@@ -110,12 +123,6 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = "black";
     context.fillText("Recipes", recipeShop.x, recipeShop.y);
 
-    // Kitchen
-    context.fillStyle = "grey";
-    context.fillRect(kitchen.x, kitchen.y, kitchen.width, kitchen.height);
-    context.fillStyle = "black";
-    context.fillText("Kitchen", kitchen.x, kitchen.y);
-
     // Ingredients
     context.fillStyle = "grey";
     context.fillRect(
@@ -127,8 +134,23 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = "black";
     context.fillText("Ingredients", ingredients.x, ingredients.y);
 
-    player.draw(context);
+    // Kitchen
+    context.fillStyle = "grey";
+    context.fillRect(kitchen.x, kitchen.y, kitchen.width, kitchen.height);
+    context.fillStyle = "black";
+    context.fillText("Kitchen", kitchen.x, kitchen.y);
 
+    context.fillStyle = "grey";
+    context.fillRect(counter.x, counter.y, counter.width, counter.height);
+    context.fillStyle = "black";
+    context.fillText("Counter", counter.x, counter.y);
+
+    context.fillStyle = "grey";
+    context.fillRect(dungeon.x, dungeon.y, dungeon.width, dungeon.height);
+    context.fillStyle = "black";
+    context.fillText("Dungeon", dungeon.x, dungeon.y);
+
+    entities.forEach((entity) => entity.draw(context));
     menuStack.forEach((menu) => menu.draw(context));
 
     context.fillStyle = "red";
