@@ -19,11 +19,18 @@ import { Player } from "./player";
 import { Restaurant } from "./restaurant";
 import { Item, KeyCode, Position } from "./types";
 
+import map from "./map.json";
+import { TileMap, TileLayer } from "./ldtk/types";
+import { findPassabilityLayer, findPath, isTilePassable } from "./pathfinding";
+
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 const WIDTH = 1280;
 const HEIGHT = 720;
 const SCALE = 2;
+
+
+let path: Position[] | undefined = undefined;
 
 const mousePosition: Position = { x: 0, y: 0 };
 const inventory = new Inventory([
@@ -54,8 +61,8 @@ const menuStack: Menu[] = [];
 
 const entities = [
     player,
-    new Adventurer(512, 150, counter, dungeon, RECIPES[0]),
-    new Adventurer(400, 150, counter, dungeon, RECIPES[1]),
+    new Adventurer(512, 150, map.levels[0], counter,  { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) }, RECIPES[0]),
+    // new Adventurer(400, 150, map.levels[0], counter, dungeon, RECIPES[1]),
 ];
 
 function openMenu(menu: Menu) {
@@ -79,6 +86,8 @@ canvas.onmousemove = (e: MouseEvent) => {
 document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
 
+const tileset = new Image();
+
 function update(): void {
     if (menuStack.length == 0) {
         entities.forEach((entity) => entity.update());
@@ -98,6 +107,10 @@ function update(): void {
         if (isKeyPressed(KeyCode.ESCAPE)) {
             openMenu(new InventoryMenu(player.inventory));
         }
+
+        if (isKeyPressed(KeyCode.R)) {
+            path = findPath(map.levels[0], {x: 3, y: 4}, {x: 27, y: 12});
+        }
     } else {
         menuStack.forEach((menu) => menu.update());
     }
@@ -105,12 +118,57 @@ function update(): void {
     clearPressedKeys();
 }
 
+function drawMap(context: CanvasRenderingContext2D, map: TileMap) {
+    const level = map.levels[0];
+    for (let index = level.layerInstances.length - 1; index >= 0; index--) {
+        const layer = level.layerInstances[index];
+        if ("gridTiles" in layer) {
+            layer.gridTiles.forEach(tile => {
+                const destination = tile.px;
+                const source = tile.src;
+                const TILE_SIZE = 16;
+    
+                context.drawImage(
+                    tileset,
+                    source[0], source[1], TILE_SIZE, TILE_SIZE,
+                    destination[0], destination[1], TILE_SIZE, TILE_SIZE
+                )
+            });
+        }
+    }
+}
+
+function drawPath(context: CanvasRenderingContext2D) {
+    if (!path) {
+        return;
+    }
+
+    if (path.length < 2) {
+        console.log("Single tile path");
+        return;
+    }
+
+    for (let index = 0; index < path.length - 1; index++) {
+        const from = path[index];
+        const to = path[index + 1];
+
+        context.beginPath();
+        context.moveTo((from.x * 16) + 8, (from.y * 16) + 8);
+        context.lineTo((to.x * 16) + 8, (to.y * 16) + 8);
+        context.stroke();
+    }
+}
+
 function draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = "cornflowerblue";
     context.textBaseline = "top";
     context.fillRect(0, 0, WIDTH, HEIGHT);
 
+    context.imageSmoothingEnabled = false;
+
     context.scale(SCALE, SCALE);
+
+    drawMap(context, map);
 
     // Recipe Shop
     context.fillStyle = "grey";
@@ -156,6 +214,8 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = "red";
     context.fillRect(mousePosition.x - 1, mousePosition.y - 1, 3, 3);
 
+    drawPath(context);
+
     context.resetTransform();
 }
 
@@ -166,4 +226,9 @@ function loop(): void {
     requestAnimationFrame(loop);
 }
 
-loop();
+function load() {
+    tileset.onload = loop;
+    tileset.src = new URL("img/tileset.png", import.meta.url).href;
+}
+
+load();

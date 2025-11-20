@@ -1,5 +1,5 @@
 import { Adventurer, AdventurerState } from "./adventurer";
-import { Item } from "./types";
+import { Item, Position } from "./types";
 
 interface Order {
     adventurer: Adventurer;
@@ -13,6 +13,7 @@ export class Restaurant {
     height: number;
     busy: boolean;
     orders: Order[] = [];
+    position: Position;
 
     constructor(x: number, y: number, width: number, height: number) {
         this.x = x;
@@ -21,6 +22,8 @@ export class Restaurant {
         this.height = height;
 
         this.busy = false;
+
+        this.position = { x: Math.floor(x / 16), y: Math.floor(y / 16) };
     }
 
     placeOrder(adventurer: Adventurer, item: Item) {

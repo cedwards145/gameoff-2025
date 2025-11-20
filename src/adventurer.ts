@@ -1,7 +1,9 @@
+import { Level } from "./ldtk/types";
+import { findPath } from "./pathfinding";
 import { intersects } from "./physics";
 import { Restaurant } from "./restaurant";
 import { Timer } from "./timer";
-import { Item, Rectangle } from "./types";
+import { Item, Position, Rectangle } from "./types";
 
 export enum AdventurerState {
     IDLE,
@@ -15,24 +17,28 @@ export enum AdventurerState {
 export class Adventurer {
     x: number;
     y: number;
+    level: Level;
     width: number;
     height: number;
     state: AdventurerState;
     restaurant: Restaurant;
-    dungeon: Rectangle;
+    dungeon: Position;
     order: Item;
 
     timer: Timer;
+    path: Position[] | undefined;
 
     constructor(
         x: number,
         y: number,
+        level: Level,
         restaurant: Restaurant,
-        dungeon: Rectangle,
+        dungeon: Position,
         order: Item
     ) {
         this.x = x;
         this.y = y;
+        this.level = level;
         this.width = 16;
         this.height = 16;
         this.restaurant = restaurant;
@@ -43,17 +49,23 @@ export class Adventurer {
         this.timer = new Timer();
     }
 
-    moveTo(target: Rectangle): boolean {
-        if (intersects(this, target)) {
+    followPath(): boolean {
+        if (!this.path || this.path.length === 0) {
             return true;
-        } else {
-            const xDelta = target.x - this.x;
-            const yDelta = target.y - this.y;
-
-            this.x += Math.sign(xDelta);
-            this.y += Math.sign(yDelta);
-            return false;
         }
+
+        const target = this.path[0];
+
+        const xDelta = target.x - Math.floor(this.x / 16);
+        const yDelta = target.y - Math.floor(this.y / 16);
+        if (xDelta === 0 && yDelta === 0) {
+            this.path.shift();
+        }
+
+        this.x += Math.sign(xDelta);
+        this.y += Math.sign(yDelta);
+        
+        return false;
     }
 
     update() {
@@ -61,7 +73,11 @@ export class Adventurer {
             case AdventurerState.IDLE:
                 break;
             case AdventurerState.MOVING_TO_RESTAURANT:
-                if (this.moveTo(this.restaurant)) {
+                if (!this.path) {
+                    this.path = findPath(this.level, { x: Math.floor(this.x / 16), y: Math.floor(this.y / 16)}, this.restaurant.position);
+                }
+                if (this.followPath()) {
+                    this.path = undefined;
                     this.state = AdventurerState.QUEUEING;
                     this.restaurant.placeOrder(this, this.order);
                 }
@@ -75,7 +91,11 @@ export class Adventurer {
                 }
                 break;
             case AdventurerState.MOVING_TO_DUNGEON:
-                if (this.moveTo(this.dungeon)) {
+                if (!this.path) {
+                    this.path = findPath(this.level, { x: Math.floor(this.x / 16), y: Math.floor(this.y / 16)}, this.dungeon);
+                }
+                if (this.followPath()) {
+                    this.path = undefined;
                     this.state = AdventurerState.ADVENTURING;
                     this.timer.start(5000);
                 }

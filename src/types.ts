@@ -25,5 +25,6 @@ export enum KeyCode {
     A = 65,
     D = 68,
     E = 69,
+    R = 82,
     ESCAPE = 27,
 }
