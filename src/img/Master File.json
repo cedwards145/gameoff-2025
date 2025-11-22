@@ -1,0 +1,1746 @@
+{ "frames": [
+   {
+    "filename": "Master File #idle 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idle 1.aseprite",
+    "frame": { "x": 240, "y": 0, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idle 2.aseprite",
+    "frame": { "x": 480, "y": 0, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idle 3.aseprite",
+    "frame": { "x": 720, "y": 0, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idle 4.aseprite",
+    "frame": { "x": 960, "y": 0, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 0.aseprite",
+    "frame": { "x": 0, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 1.aseprite",
+    "frame": { "x": 240, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 2.aseprite",
+    "frame": { "x": 480, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 3.aseprite",
+    "frame": { "x": 720, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 4.aseprite",
+    "frame": { "x": 960, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 5.aseprite",
+    "frame": { "x": 1200, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 6.aseprite",
+    "frame": { "x": 1440, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #walk 7.aseprite",
+    "frame": { "x": 1680, "y": 80, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 0.aseprite",
+    "frame": { "x": 0, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 1.aseprite",
+    "frame": { "x": 240, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 2.aseprite",
+    "frame": { "x": 480, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 3.aseprite",
+    "frame": { "x": 720, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 4.aseprite",
+    "frame": { "x": 960, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 5.aseprite",
+    "frame": { "x": 1200, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 6.aseprite",
+    "frame": { "x": 1440, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #run 7.aseprite",
+    "frame": { "x": 1680, "y": 160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hurt 0.aseprite",
+    "frame": { "x": 0, "y": 240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hurt 1.aseprite",
+    "frame": { "x": 240, "y": 240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hurt 2.aseprite",
+    "frame": { "x": 480, "y": 240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hurt 3.aseprite",
+    "frame": { "x": 720, "y": 240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 0.aseprite",
+    "frame": { "x": 0, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 1.aseprite",
+    "frame": { "x": 240, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 2.aseprite",
+    "frame": { "x": 480, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 3.aseprite",
+    "frame": { "x": 720, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 4.aseprite",
+    "frame": { "x": 960, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #death 5.aseprite",
+    "frame": { "x": 1200, "y": 320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 500
+   },
+   {
+    "filename": "Master File #jump 0.aseprite",
+    "frame": { "x": 0, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #jump 1.aseprite",
+    "frame": { "x": 240, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #jump 2.aseprite",
+    "frame": { "x": 480, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #jump 3.aseprite",
+    "frame": { "x": 720, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #jump 4.aseprite",
+    "frame": { "x": 960, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #jump 5.aseprite",
+    "frame": { "x": 1200, "y": 400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 0.aseprite",
+    "frame": { "x": 0, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 1.aseprite",
+    "frame": { "x": 240, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 2.aseprite",
+    "frame": { "x": 480, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 3.aseprite",
+    "frame": { "x": 720, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 4.aseprite",
+    "frame": { "x": 960, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - idle 5.aseprite",
+    "frame": { "x": 1200, "y": 480, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 0.aseprite",
+    "frame": { "x": 0, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 1.aseprite",
+    "frame": { "x": 240, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 2.aseprite",
+    "frame": { "x": 480, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 3.aseprite",
+    "frame": { "x": 720, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 4.aseprite",
+    "frame": { "x": 960, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #swim - move 5.aseprite",
+    "frame": { "x": 1200, "y": 560, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 0.aseprite",
+    "frame": { "x": 0, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 1.aseprite",
+    "frame": { "x": 240, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 2.aseprite",
+    "frame": { "x": 480, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 3.aseprite",
+    "frame": { "x": 720, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 4.aseprite",
+    "frame": { "x": 960, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pick up 5.aseprite",
+    "frame": { "x": 1200, "y": 640, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 500
+   },
+   {
+    "filename": "Master File #pickaxe 0.aseprite",
+    "frame": { "x": 0, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pickaxe 1.aseprite",
+    "frame": { "x": 240, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pickaxe 2.aseprite",
+    "frame": { "x": 480, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pickaxe 3.aseprite",
+    "frame": { "x": 720, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pickaxe 4.aseprite",
+    "frame": { "x": 960, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #pickaxe 5.aseprite",
+    "frame": { "x": 1200, "y": 720, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 0.aseprite",
+    "frame": { "x": 0, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 1.aseprite",
+    "frame": { "x": 240, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 2.aseprite",
+    "frame": { "x": 480, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 3.aseprite",
+    "frame": { "x": 720, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 4.aseprite",
+    "frame": { "x": 960, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #axe 5.aseprite",
+    "frame": { "x": 1200, "y": 800, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 0.aseprite",
+    "frame": { "x": 0, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 1.aseprite",
+    "frame": { "x": 240, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 2.aseprite",
+    "frame": { "x": 480, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 3.aseprite",
+    "frame": { "x": 720, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 4.aseprite",
+    "frame": { "x": 960, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hammer 5.aseprite",
+    "frame": { "x": 1200, "y": 880, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 0.aseprite",
+    "frame": { "x": 0, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 1.aseprite",
+    "frame": { "x": 240, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 2.aseprite",
+    "frame": { "x": 480, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 3.aseprite",
+    "frame": { "x": 720, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 4.aseprite",
+    "frame": { "x": 960, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #hoe 5.aseprite",
+    "frame": { "x": 1200, "y": 960, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 0.aseprite",
+    "frame": { "x": 0, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 1.aseprite",
+    "frame": { "x": 240, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 2.aseprite",
+    "frame": { "x": 480, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 3.aseprite",
+    "frame": { "x": 720, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 4.aseprite",
+    "frame": { "x": 960, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 5.aseprite",
+    "frame": { "x": 1200, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 6.aseprite",
+    "frame": { "x": 1440, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shovel 7.aseprite",
+    "frame": { "x": 1680, "y": 1040, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 0.aseprite",
+    "frame": { "x": 0, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 1.aseprite",
+    "frame": { "x": 240, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 2.aseprite",
+    "frame": { "x": 480, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 3.aseprite",
+    "frame": { "x": 720, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 4.aseprite",
+    "frame": { "x": 960, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sickle 5.aseprite",
+    "frame": { "x": 1200, "y": 1120, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #planting 0.aseprite",
+    "frame": { "x": 0, "y": 1200, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #planting 1.aseprite",
+    "frame": { "x": 240, "y": 1200, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #planting 2.aseprite",
+    "frame": { "x": 480, "y": 1200, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #planting 3.aseprite",
+    "frame": { "x": 720, "y": 1200, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 0.aseprite",
+    "frame": { "x": 0, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 1.aseprite",
+    "frame": { "x": 240, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 2.aseprite",
+    "frame": { "x": 480, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 3.aseprite",
+    "frame": { "x": 720, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 4.aseprite",
+    "frame": { "x": 960, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #watering 5.aseprite",
+    "frame": { "x": 1200, "y": 1280, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 0.aseprite",
+    "frame": { "x": 0, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 1.aseprite",
+    "frame": { "x": 240, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 2.aseprite",
+    "frame": { "x": 480, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 3.aseprite",
+    "frame": { "x": 720, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 4.aseprite",
+    "frame": { "x": 960, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #casting 5.aseprite",
+    "frame": { "x": 1200, "y": 1360, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idling 0.aseprite",
+    "frame": { "x": 0, "y": 1440, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idling 1.aseprite",
+    "frame": { "x": 240, "y": 1440, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idling 2.aseprite",
+    "frame": { "x": 480, "y": 1440, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #idling 3.aseprite",
+    "frame": { "x": 720, "y": 1440, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 0.aseprite",
+    "frame": { "x": 0, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 1.aseprite",
+    "frame": { "x": 240, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 2.aseprite",
+    "frame": { "x": 480, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 3.aseprite",
+    "frame": { "x": 720, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 4.aseprite",
+    "frame": { "x": 960, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #reeling 5.aseprite",
+    "frame": { "x": 1200, "y": 1520, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 0.aseprite",
+    "frame": { "x": 0, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 1.aseprite",
+    "frame": { "x": 240, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 2.aseprite",
+    "frame": { "x": 480, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 3.aseprite",
+    "frame": { "x": 720, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 4.aseprite",
+    "frame": { "x": 960, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #catching 5.aseprite",
+    "frame": { "x": 1200, "y": 1600, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #brush 0.aseprite",
+    "frame": { "x": 0, "y": 1680, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #brush 1.aseprite",
+    "frame": { "x": 240, "y": 1680, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #brush 2.aseprite",
+    "frame": { "x": 480, "y": 1680, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #brush 3.aseprite",
+    "frame": { "x": 720, "y": 1680, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 0.aseprite",
+    "frame": { "x": 0, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 1.aseprite",
+    "frame": { "x": 240, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 2.aseprite",
+    "frame": { "x": 480, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 3.aseprite",
+    "frame": { "x": 720, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 4.aseprite",
+    "frame": { "x": 960, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #shear 5.aseprite",
+    "frame": { "x": 1200, "y": 1760, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 0.aseprite",
+    "frame": { "x": 0, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 1.aseprite",
+    "frame": { "x": 240, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 2.aseprite",
+    "frame": { "x": 480, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 3.aseprite",
+    "frame": { "x": 720, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 4.aseprite",
+    "frame": { "x": 960, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #milking 5.aseprite",
+    "frame": { "x": 1200, "y": 1840, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 0.aseprite",
+    "frame": { "x": 0, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 1.aseprite",
+    "frame": { "x": 240, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2.aseprite",
+    "frame": { "x": 480, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 3.aseprite",
+    "frame": { "x": 720, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 4.aseprite",
+    "frame": { "x": 960, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 5.aseprite",
+    "frame": { "x": 1200, "y": 1920, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 0.aseprite",
+    "frame": { "x": 0, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 1.aseprite",
+    "frame": { "x": 240, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 2.aseprite",
+    "frame": { "x": 480, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 3.aseprite",
+    "frame": { "x": 720, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 4.aseprite",
+    "frame": { "x": 960, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #sword 2 5.aseprite",
+    "frame": { "x": 1200, "y": 2000, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 0.aseprite",
+    "frame": { "x": 0, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 1.aseprite",
+    "frame": { "x": 240, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2.aseprite",
+    "frame": { "x": 480, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 3.aseprite",
+    "frame": { "x": 720, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 4.aseprite",
+    "frame": { "x": 960, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 5.aseprite",
+    "frame": { "x": 1200, "y": 2080, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 0.aseprite",
+    "frame": { "x": 0, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 1.aseprite",
+    "frame": { "x": 240, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 2.aseprite",
+    "frame": { "x": 480, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 3.aseprite",
+    "frame": { "x": 720, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 4.aseprite",
+    "frame": { "x": 960, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #spear 2 5.aseprite",
+    "frame": { "x": 1200, "y": 2160, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 0.aseprite",
+    "frame": { "x": 0, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 1.aseprite",
+    "frame": { "x": 240, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 2.aseprite",
+    "frame": { "x": 480, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 3.aseprite",
+    "frame": { "x": 720, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 4.aseprite",
+    "frame": { "x": 960, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #bow 5.aseprite",
+    "frame": { "x": 1200, "y": 2240, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 0.aseprite",
+    "frame": { "x": 0, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 1.aseprite",
+    "frame": { "x": 240, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 2.aseprite",
+    "frame": { "x": 480, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 3.aseprite",
+    "frame": { "x": 720, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 4.aseprite",
+    "frame": { "x": 960, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #crossbow 5.aseprite",
+    "frame": { "x": 1200, "y": 2320, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 0.aseprite",
+    "frame": { "x": 0, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 1.aseprite",
+    "frame": { "x": 240, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 2.aseprite",
+    "frame": { "x": 480, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 3.aseprite",
+    "frame": { "x": 720, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 4.aseprite",
+    "frame": { "x": 960, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 5.aseprite",
+    "frame": { "x": 1200, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 6.aseprite",
+    "frame": { "x": 1440, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 7.aseprite",
+    "frame": { "x": 1680, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 8.aseprite",
+    "frame": { "x": 1920, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   },
+   {
+    "filename": "Master File #wand 9.aseprite",
+    "frame": { "x": 2160, "y": 2400, "w": 240, "h": 80 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 240, "h": 80 },
+    "sourceSize": { "w": 240, "h": 80 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.15.2-x64",
+  "image": "Master File.png",
+  "format": "RGBA8888",
+  "size": { "w": 2400, "h": 2480 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle", "from": 0, "to": 4, "direction": "forward", "color": "#000000ff" },
+   { "name": "walk", "from": 5, "to": 12, "direction": "forward", "color": "#000000ff" },
+   { "name": "run", "from": 13, "to": 20, "direction": "forward", "color": "#000000ff" },
+   { "name": "hurt", "from": 21, "to": 24, "direction": "forward", "color": "#000000ff" },
+   { "name": "death", "from": 25, "to": 30, "direction": "forward", "color": "#000000ff" },
+   { "name": "jump", "from": 31, "to": 36, "direction": "forward", "color": "#000000ff" },
+   { "name": "swim - idle", "from": 37, "to": 42, "direction": "forward", "color": "#000000ff" },
+   { "name": "swim - move", "from": 43, "to": 48, "direction": "forward", "color": "#000000ff" },
+   { "name": "pick up", "from": 49, "to": 54, "direction": "forward", "color": "#000000ff" },
+   { "name": "pickaxe", "from": 55, "to": 60, "direction": "forward", "color": "#000000ff" },
+   { "name": "axe", "from": 61, "to": 66, "direction": "forward", "color": "#000000ff" },
+   { "name": "hammer", "from": 67, "to": 72, "direction": "forward", "color": "#000000ff" },
+   { "name": "hoe", "from": 73, "to": 78, "direction": "forward", "color": "#000000ff" },
+   { "name": "shovel", "from": 79, "to": 86, "direction": "forward", "color": "#000000ff" },
+   { "name": "sickle", "from": 87, "to": 92, "direction": "forward", "color": "#000000ff" },
+   { "name": "planting", "from": 93, "to": 96, "direction": "forward", "color": "#000000ff" },
+   { "name": "watering", "from": 97, "to": 102, "direction": "forward", "color": "#000000ff" },
+   { "name": "casting", "from": 103, "to": 108, "direction": "forward", "color": "#000000ff" },
+   { "name": "idling", "from": 109, "to": 112, "direction": "forward", "color": "#000000ff" },
+   { "name": "reeling", "from": 113, "to": 118, "direction": "forward", "color": "#000000ff" },
+   { "name": "catching", "from": 119, "to": 124, "direction": "forward", "color": "#000000ff" },
+   { "name": "brush", "from": 125, "to": 128, "direction": "forward", "color": "#000000ff" },
+   { "name": "shear", "from": 129, "to": 134, "direction": "forward", "color": "#000000ff" },
+   { "name": "milking", "from": 135, "to": 140, "direction": "forward", "color": "#000000ff" },
+   { "name": "sword", "from": 141, "to": 146, "direction": "forward", "color": "#000000ff" },
+   { "name": "sword 2", "from": 147, "to": 152, "direction": "forward", "color": "#000000ff" },
+   { "name": "spear", "from": 153, "to": 158, "direction": "forward", "color": "#000000ff" },
+   { "name": "spear 2", "from": 159, "to": 164, "direction": "forward", "color": "#000000ff" },
+   { "name": "bow", "from": 165, "to": 170, "direction": "forward", "color": "#000000ff" },
+   { "name": "crossbow", "from": 171, "to": 176, "direction": "forward", "color": "#000000ff" },
+   { "name": "wand", "from": 177, "to": 186, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "up" },
+   { "name": "hand 2", "group": "up", "opacity": 255, "blendMode": "normal" },
+   { "name": "vfx", "group": "up", "opacity": 255, "blendMode": "normal" },
+   { "name": "body", "group": "up", "opacity": 255, "blendMode": "normal", "color": "#fe5b5920" },
+   { "name": "hand", "group": "up", "opacity": 255, "blendMode": "normal" },
+   { "name": "down" },
+   { "name": "hand 2", "group": "down", "opacity": 255, "blendMode": "normal" },
+   { "name": "body", "group": "down", "opacity": 255, "blendMode": "normal", "color": "#fe5b5920" },
+   { "name": "hand", "group": "down", "opacity": 255, "blendMode": "normal" },
+   { "name": "vfx", "group": "down", "opacity": 255, "blendMode": "normal" },
+   { "name": "side" },
+   { "name": "hand 2", "group": "side", "opacity": 255, "blendMode": "normal" },
+   { "name": "body", "group": "side", "opacity": 255, "blendMode": "normal", "color": "#fe5b5920" },
+   { "name": "hand", "group": "side", "opacity": 255, "blendMode": "normal" },
+   { "name": "vfx", "group": "side", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

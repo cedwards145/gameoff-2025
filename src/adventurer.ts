@@ -1,9 +1,9 @@
+import { Character } from "./character";
 import { Level } from "./ldtk/types";
 import { findPath } from "./pathfinding";
-import { intersects } from "./physics";
 import { Restaurant } from "./restaurant";
 import { Timer } from "./timer";
-import { Item, Position, Rectangle } from "./types";
+import { Item, Position } from "./types";
 
 export enum AdventurerState {
     IDLE,
@@ -14,13 +14,9 @@ export enum AdventurerState {
     ADVENTURING,
 }
 
-export class Adventurer {
-    x: number;
-    y: number;
+export class Adventurer extends Character {
     level: Level;
-    width: number;
-    height: number;
-    state: AdventurerState;
+    adventurerState: AdventurerState;
     restaurant: Restaurant;
     dungeon: Position;
     order: Item;
@@ -36,85 +32,98 @@ export class Adventurer {
         dungeon: Position,
         order: Item
     ) {
-        this.x = x;
-        this.y = y;
+        super(x, y, 16, 16);
         this.level = level;
-        this.width = 16;
-        this.height = 16;
         this.restaurant = restaurant;
         this.dungeon = dungeon;
         this.order = order;
 
-        this.state = AdventurerState.MOVING_TO_RESTAURANT;
+        this.adventurerState = AdventurerState.MOVING_TO_RESTAURANT;
         this.timer = new Timer();
     }
 
-    followPath(): boolean {
+    followPath(deltaT: number): boolean {
         if (!this.path || this.path.length === 0) {
             return true;
         }
 
-        const target = this.path[0];
+        const target = {
+            x: this.path[0].x * 16 + 8,
+            y: this.path[0].y * 16 + 16,
+        };
+        this.walkTo(target, deltaT);
 
-        const xDelta = target.x - Math.floor(this.x / 16);
-        const yDelta = target.y - Math.floor(this.y / 16);
-        if (xDelta === 0 && yDelta === 0) {
+        if (this.x === target.x && this.y === target.y) {
             this.path.shift();
         }
 
-        this.x += Math.sign(xDelta);
-        this.y += Math.sign(yDelta);
-        
         return false;
     }
 
-    update() {
-        switch (this.state) {
+    update(deltaT: number) {
+        switch (this.adventurerState) {
             case AdventurerState.IDLE:
+                this.idle();
                 break;
             case AdventurerState.MOVING_TO_RESTAURANT:
                 if (!this.path) {
-                    this.path = findPath(this.level, { x: Math.floor(this.x / 16), y: Math.floor(this.y / 16)}, this.restaurant.position);
+                    this.path = findPath(
+                        this.level,
+                        {
+                            x: Math.floor(this.x / 16),
+                            y: Math.floor(this.y / 16),
+                        },
+                        this.restaurant.position
+                    );
                 }
-                if (this.followPath()) {
+                if (this.followPath(deltaT)) {
                     this.path = undefined;
-                    this.state = AdventurerState.QUEUEING;
+                    this.adventurerState = AdventurerState.QUEUEING;
                     this.restaurant.placeOrder(this, this.order);
                 }
                 break;
             case AdventurerState.QUEUEING:
+                this.idle();
                 break;
             case AdventurerState.EATING:
                 if (this.timer.isComplete()) {
-                    this.state = AdventurerState.MOVING_TO_DUNGEON;
+                    this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
                     this.restaurant.busy = false;
+                } else {
+                    this.idle();
                 }
                 break;
             case AdventurerState.MOVING_TO_DUNGEON:
                 if (!this.path) {
-                    this.path = findPath(this.level, { x: Math.floor(this.x / 16), y: Math.floor(this.y / 16)}, this.dungeon);
+                    this.path = findPath(
+                        this.level,
+                        {
+                            x: Math.floor(this.x / 16),
+                            y: Math.floor(this.y / 16),
+                        },
+                        this.dungeon
+                    );
                 }
-                if (this.followPath()) {
+                if (this.followPath(deltaT)) {
                     this.path = undefined;
-                    this.state = AdventurerState.ADVENTURING;
+                    this.adventurerState = AdventurerState.ADVENTURING;
                     this.timer.start(5000);
                 }
                 break;
             case AdventurerState.ADVENTURING:
                 if (this.timer.isComplete()) {
-                    this.state = AdventurerState.MOVING_TO_RESTAURANT;
+                    this.adventurerState = AdventurerState.MOVING_TO_RESTAURANT;
+                } else {
+                    this.idle();
                 }
                 break;
         }
+
+        super.update(deltaT);
     }
 
     startEating() {
-        this.state = AdventurerState.EATING;
+        this.adventurerState = AdventurerState.EATING;
         this.timer.start(5000);
-    }
-
-    draw(context: CanvasRenderingContext2D) {
-        context.fillStyle = "black";
-        context.fillRect(this.x, this.y, this.width, this.height);
     }
 }

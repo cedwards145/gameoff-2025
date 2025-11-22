@@ -1,36 +1,49 @@
+import { Character, Direction } from "./character";
 import { isKeyDown } from "./input";
 import { Inventory } from "./inventory";
 import { KeyCode, Recipe } from "./types";
 
-export class Player {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
+export class Player extends Character {
     recipes: Recipe[] = [];
     inventory: Inventory = new Inventory();
 
     constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.width = 16;
-        this.height = 16;
+        super(x, y, 16, 16);
     }
 
-    update(): void {
-        if (isKeyDown(KeyCode.A)) {
-            this.x--;
-        } else if (isKeyDown(KeyCode.D)) {
-            this.x++;
-        } else if (isKeyDown(KeyCode.W)) {
-            this.y--;
-        } else if (isKeyDown(KeyCode.S)) {
-            this.y++;
+    update(deltaT: number): void {
+        const move = isKeyDown(KeyCode.SHIFT)
+            ? (direction: Direction, deltaT: number) =>
+                  this.run(direction, deltaT)
+            : (direction: Direction, deltaT: number) =>
+                  this.walk(direction, deltaT);
+        let moved = false;
+
+        if (isKeyDown(82)) {
+            this.attack();
+            moved = true;
         }
-    }
+        if (isKeyDown(65)) {
+            move(Direction.LEFT, deltaT);
+            moved = true;
+        }
+        if (isKeyDown(68)) {
+            move(Direction.RIGHT, deltaT);
+            moved = true;
+        }
+        if (isKeyDown(87)) {
+            move(Direction.UP, deltaT);
+            moved = true;
+        }
+        if (isKeyDown(83)) {
+            move(Direction.DOWN, deltaT);
+            moved = true;
+        }
 
-    draw(context: CanvasRenderingContext2D): void {
-        context.fillStyle = "black";
-        context.fillRect(this.x, this.y, this.width, this.height);
+        if (!moved) {
+            this.idle();
+        }
+
+        super.update(deltaT);
     }
 }

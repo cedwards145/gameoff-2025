@@ -93,9 +93,9 @@ canvas.onmousemove = (e: MouseEvent) => {
 document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
 
-function update(): void {
+function update(deltaT: number): void {
     if (menuStack.length == 0) {
-        entities.forEach((entity) => entity.update());
+        entities.forEach((entity) => entity.update(deltaT));
 
         if (intersects(player, recipeShop) && isKeyPressed(KeyCode.E)) {
             openMenu(new RecipeShopMenu(RECIPES, player));
@@ -231,10 +231,22 @@ function draw(context: CanvasRenderingContext2D): void {
     context.resetTransform();
 }
 
-function loop(): void {
-    update();
-    draw(context);
+let start = 0;
+function loop(timestamp: number): void {
+    if (start) {
+        const elapsedMs = timestamp - start;
+        const deltaT = elapsedMs / 1000;
+
+        update(deltaT);
+        draw(context);
+    }
+
+    start = timestamp;
     requestAnimationFrame(loop);
 }
 
-load(loop);
+function runGame() {
+    requestAnimationFrame(loop);
+}
+
+load(runGame);
