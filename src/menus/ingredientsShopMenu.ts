@@ -19,15 +19,15 @@ export class IngredientsShopMenu extends Menu {
         this.listWindow = new ListWindow(
             10,
             40,
-            200,
-            220,
+            24,
+            24,
             ingredients.map((ingredient) => ({
                 text: ingredient.name,
                 enabled: true,
             }))
         );
         this.listWindow.onSelect = (index) => this.handlePurchase(index);
-        this.descriptionWindow = new TextWindow(10, 10, 410, 24);
+        this.descriptionWindow = new TextWindow(10, 10, 24, 3);
     }
 
     handlePurchase(index: number) {

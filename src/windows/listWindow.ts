@@ -2,7 +2,7 @@ import { isKeyPressed } from "../input";
 import { Window } from "./window";
 import { KeyCode } from "../types";
 
-const ROW_HEIGHT = 16;
+const ROW_HEIGHT = 20;
 
 interface Choice {
     text: string;
@@ -44,6 +44,8 @@ export class ListWindow extends Window {
     draw(context: CanvasRenderingContext2D): void {
         super.draw(context);
 
+        context.save();
+        this.clip(context);
         context.font = "10px sans";
 
         for (
@@ -55,10 +57,8 @@ export class ListWindow extends Window {
                 context.fillStyle = "lightgrey";
                 context.fillRect(
                     this.x + this.padding,
-                    this.y +
-                        this.padding +
-                        currentIndex * (ROW_HEIGHT + this.padding),
-                    this.width - this.padding * 2,
+                    this.y + this.padding + currentIndex * ROW_HEIGHT,
+                    this.width * 8 - this.padding * 2,
                     ROW_HEIGHT
                 );
             }
@@ -69,10 +69,10 @@ export class ListWindow extends Window {
             context.fillText(
                 choice.text,
                 this.x + this.padding * 2,
-                this.y +
-                    this.padding * 2 +
-                    currentIndex * (ROW_HEIGHT + this.padding)
+                this.y + this.padding + 4 + currentIndex * ROW_HEIGHT
             );
         }
+
+        context.restore();
     }
 }

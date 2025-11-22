@@ -22,13 +22,13 @@ import { Item, KeyCode, Position } from "./types";
 import map from "./map.json";
 import { TileMap, TileLayer } from "./ldtk/types";
 import { findPassabilityLayer, findPath, isTilePassable } from "./pathfinding";
+import { getImageResource, load } from "./resources";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 const WIDTH = 1280;
 const HEIGHT = 720;
 const SCALE = 2;
-
 
 let path: Position[] | undefined = undefined;
 
@@ -61,7 +61,14 @@ const menuStack: Menu[] = [];
 
 const entities = [
     player,
-    new Adventurer(512, 150, map.levels[0], counter,  { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) }, RECIPES[0]),
+    new Adventurer(
+        512,
+        150,
+        map.levels[0],
+        counter,
+        { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
+        RECIPES[0]
+    ),
     // new Adventurer(400, 150, map.levels[0], counter, dungeon, RECIPES[1]),
 ];
 
@@ -86,8 +93,6 @@ canvas.onmousemove = (e: MouseEvent) => {
 document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
 
-const tileset = new Image();
-
 function update(): void {
     if (menuStack.length == 0) {
         entities.forEach((entity) => entity.update());
@@ -109,7 +114,7 @@ function update(): void {
         }
 
         if (isKeyPressed(KeyCode.R)) {
-            path = findPath(map.levels[0], {x: 3, y: 4}, {x: 27, y: 12});
+            path = findPath(map.levels[0], { x: 3, y: 4 }, { x: 27, y: 12 });
         }
     } else {
         menuStack.forEach((menu) => menu.update());
@@ -120,19 +125,26 @@ function update(): void {
 
 function drawMap(context: CanvasRenderingContext2D, map: TileMap) {
     const level = map.levels[0];
+    const tileset = getImageResource("tileset");
     for (let index = level.layerInstances.length - 1; index >= 0; index--) {
         const layer = level.layerInstances[index];
         if ("gridTiles" in layer) {
-            layer.gridTiles.forEach(tile => {
+            layer.gridTiles.forEach((tile) => {
                 const destination = tile.px;
                 const source = tile.src;
                 const TILE_SIZE = 16;
-    
+
                 context.drawImage(
                     tileset,
-                    source[0], source[1], TILE_SIZE, TILE_SIZE,
-                    destination[0], destination[1], TILE_SIZE, TILE_SIZE
-                )
+                    source[0],
+                    source[1],
+                    TILE_SIZE,
+                    TILE_SIZE,
+                    destination[0],
+                    destination[1],
+                    TILE_SIZE,
+                    TILE_SIZE
+                );
             });
         }
     }
@@ -153,8 +165,8 @@ function drawPath(context: CanvasRenderingContext2D) {
         const to = path[index + 1];
 
         context.beginPath();
-        context.moveTo((from.x * 16) + 8, (from.y * 16) + 8);
-        context.lineTo((to.x * 16) + 8, (to.y * 16) + 8);
+        context.moveTo(from.x * 16 + 8, from.y * 16 + 8);
+        context.lineTo(to.x * 16 + 8, to.y * 16 + 8);
         context.stroke();
     }
 }
@@ -222,13 +234,7 @@ function draw(context: CanvasRenderingContext2D): void {
 function loop(): void {
     update();
     draw(context);
-
     requestAnimationFrame(loop);
 }
 
-function load() {
-    tileset.onload = loop;
-    tileset.src = new URL("img/tileset.png", import.meta.url).href;
-}
-
-load();
+load(loop);

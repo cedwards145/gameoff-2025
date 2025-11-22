@@ -15,14 +15,14 @@ export class InventoryMenu extends Menu {
         this.inventoryWindow = new ListWindow(
             10,
             40,
-            200,
-            200,
+            24,
+            24,
             inventory.itemQuantities.map((itemQuantity) => ({
                 text: itemQuantity.item.name + " x" + itemQuantity.quantity,
                 enabled: true,
             }))
         );
-        this.descriptionWindow = new TextWindow(10, 10, 200, 24);
+        this.descriptionWindow = new TextWindow(10, 10, 24, 3);
     }
 
     update(): void {

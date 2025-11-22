@@ -14,7 +14,7 @@ export class OrdersMenu extends Menu {
         this.player = player;
         this.restaurant = restaurant;
 
-        this.listWindow = new ListWindow(0, 0, 200, 200, []);
+        this.listWindow = new ListWindow(10, 10, 24, 24, []);
         this.listWindow.onSelect = (index) => this.handleDeliverOrder(index);
         this.updateChoices();
     }

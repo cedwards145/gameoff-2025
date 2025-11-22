@@ -11,7 +11,7 @@ export class CraftingMenu extends Menu {
         super();
 
         this.player = player;
-        this.listWindow = new ListWindow(0, 0, 200, 200, []);
+        this.listWindow = new ListWindow(0, 0, 24, 24, []);
         this.listWindow.onSelect = (index) => this.handleCraft(index);
         this.updateChoices();
     }

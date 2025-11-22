@@ -19,10 +19,10 @@ export class RecipeShopMenu extends Menu {
         this.recipes = [];
         this.player = player;
 
-        this.listWindow = new ListWindow(10, 40, 200, 220, []);
+        this.descriptionWindow = new TextWindow(10, 10, 47, 3);
+        this.listWindow = new ListWindow(10, 40, 23, 24, []);
         this.listWindow.onSelect = (index) => this.handlePurchase(index);
-        this.descriptionWindow = new TextWindow(10, 10, 410, 24);
-        this.ingredientsWindow = new TextWindow(220, 40, 200, 220);
+        this.ingredientsWindow = new TextWindow(202, 40, 23, 24);
 
         this.updateRecipes();
     }
