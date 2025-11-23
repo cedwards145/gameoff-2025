@@ -11,7 +11,6 @@ export class Restaurant {
     y: number;
     width: number;
     height: number;
-    busy: boolean;
     orders: Order[] = [];
     position: Position;
 
@@ -20,8 +19,6 @@ export class Restaurant {
         this.y = y;
         this.width = width;
         this.height = height;
-
-        this.busy = false;
 
         this.position = { x: Math.floor(x / 16), y: Math.floor(y / 16) };
     }
@@ -37,5 +34,13 @@ export class Restaurant {
         }
 
         order.adventurer.startEating();
+    }
+
+    cancelOrder(adventurer: Adventurer, item: Item) {
+        const order = this.orders.filter(
+            (order) => order.adventurer === adventurer && order.item === item
+        )[0];
+        const index = this.orders.indexOf(order);
+        this.orders.splice(index, 1);
     }
 }

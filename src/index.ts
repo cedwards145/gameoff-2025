@@ -25,6 +25,7 @@ import { findPassabilityLayer, findPath, isTilePassable } from "./pathfinding";
 import { getImageResource, load } from "./resources";
 import { getCanvasSize, getScale, getScreenSize } from "./screen";
 import { TextWindow } from "./windows/textWindow";
+import { AdventurerMenu } from "./menus/adventurerMenu";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const context = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -64,10 +65,29 @@ const entities = [
     new Adventurer(
         512,
         150,
+        "John",
         map.levels[0],
         counter,
         { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
         RECIPES[0]
+    ),
+    new Adventurer(
+        540,
+        130,
+        "Sid",
+        map.levels[0],
+        counter,
+        { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
+        RECIPES[1]
+    ),
+    new Adventurer(
+        525,
+        160,
+        "Bob",
+        map.levels[0],
+        counter,
+        { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
+        RECIPES[2]
     ),
     // new Adventurer(400, 150, map.levels[0], counter, dungeon, RECIPES[1]),
 ];
@@ -111,6 +131,13 @@ function update(deltaT: number): void {
         }
         if (isKeyPressed(KeyCode.ESCAPE)) {
             openMenu(new InventoryMenu(player.inventory));
+        }
+        if (isKeyPressed(KeyCode.R)) {
+            openMenu(
+                new AdventurerMenu(
+                    entities.filter((entity) => entity instanceof Adventurer)
+                )
+            );
         }
     } else {
         menuStack.forEach((menu) => menu.update());

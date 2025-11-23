@@ -34,6 +34,7 @@ export class OrdersMenu extends Menu {
         const order = this.restaurant.orders[index];
         this.restaurant.deliverOrder(order);
         this.player.inventory.removeItem(order.item, 1);
+        this.player.money += 350;
         this.updateChoices();
     }
 

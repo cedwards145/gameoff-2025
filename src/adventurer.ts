@@ -14,12 +14,30 @@ export enum AdventurerState {
     ADVENTURING,
 }
 
+export function adventurerStateToDescription(state: AdventurerState) {
+    switch (state) {
+        case AdventurerState.IDLE:
+            return "Chilling";
+        case AdventurerState.MOVING_TO_RESTAURANT:
+            return "Looking for food";
+        case AdventurerState.QUEUEING:
+            return "Waiting to be served";
+        case AdventurerState.EATING:
+            return "Eating";
+        case AdventurerState.MOVING_TO_DUNGEON:
+        case AdventurerState.ADVENTURING:
+            return "Adventuring";
+    }
+}
+
 export class Adventurer extends Character {
     level: Level;
     adventurerState: AdventurerState;
     restaurant: Restaurant;
     dungeon: Position;
     order: Item;
+    name: string;
+    foodBuff: number = 0;
 
     timer: Timer;
     path: Position[] | undefined;
@@ -27,12 +45,14 @@ export class Adventurer extends Character {
     constructor(
         x: number,
         y: number,
+        name: string,
         level: Level,
         restaurant: Restaurant,
         dungeon: Position,
         order: Item
     ) {
         super(x, y, 16, 16);
+        this.name = name;
         this.level = level;
         this.restaurant = restaurant;
         this.dungeon = dungeon;
@@ -79,16 +99,20 @@ export class Adventurer extends Character {
                 if (this.followPath(deltaT)) {
                     this.path = undefined;
                     this.adventurerState = AdventurerState.QUEUEING;
+                    this.timer.start(10000);
                     this.restaurant.placeOrder(this, this.order);
                 }
                 break;
             case AdventurerState.QUEUEING:
+                if (this.timer.isComplete()) {
+                    this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
+                    this.restaurant.cancelOrder(this, this.order);
+                }
                 this.idle();
                 break;
             case AdventurerState.EATING:
                 if (this.timer.isComplete()) {
                     this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
-                    this.restaurant.busy = false;
                 } else {
                     this.idle();
                 }
@@ -113,6 +137,7 @@ export class Adventurer extends Character {
             case AdventurerState.ADVENTURING:
                 if (this.timer.isComplete()) {
                     this.adventurerState = AdventurerState.MOVING_TO_RESTAURANT;
+                    this.foodBuff = 0;
                 } else {
                     this.idle();
                 }
@@ -125,5 +150,6 @@ export class Adventurer extends Character {
     startEating() {
         this.adventurerState = AdventurerState.EATING;
         this.timer.start(5000);
+        this.foodBuff = 50;
     }
 }
