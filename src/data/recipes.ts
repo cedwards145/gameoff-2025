@@ -3,6 +3,7 @@ import { Recipe } from "../types";
 export const RECIPES: Recipe[] = [
     {
         name: "Phoenix Fire Omelette",
+        price: 50,
         ingredients: [
             "Wyvern Eggs",
             "Dragon's Breath Pepper",
@@ -12,6 +13,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Enchanted Berry Tart",
+        price: 50,
         ingredients: [
             "Crystal Berries",
             "Thundercloud Flour",
@@ -22,6 +24,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Moonlight Mushroom Soup",
+        price: 50,
         ingredients: [
             "Moonlit Mushrooms",
             "Mermaid Tears (Water)",
@@ -32,6 +35,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Shadow Truffle Risotto",
+        price: 50,
         ingredients: [
             "Shadow Truffles",
             "Unicorn Milk",
@@ -42,6 +46,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Dragon's Breath Stir-Fry",
+        price: 50,
         ingredients: [
             "Dragon's Breath Pepper",
             "Moonlit Mushrooms",
@@ -52,6 +57,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Starlight Honeycake",
+        price: 50,
         ingredients: [
             "Thundercloud Flour",
             "Enchanted Honey",
@@ -63,6 +69,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Mandrake Root Stew",
+        price: 50,
         ingredients: [
             "Mandrake Root",
             "Moonlit Mushrooms",
@@ -73,6 +80,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Crystal Berry Elixir",
+        price: 50,
         ingredients: [
             "Crystal Berries",
             "Enchanted Honey",
@@ -82,6 +90,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Thundercloud Bread",
+        price: 50,
         ingredients: [
             "Thundercloud Flour",
             "Mermaid Tears (Water)",
@@ -91,6 +100,7 @@ export const RECIPES: Recipe[] = [
     },
     {
         name: "Fairy's Dream Dessert",
+        price: 50,
         ingredients: [
             "Fairy Dust Sugar",
             "Unicorn Milk",

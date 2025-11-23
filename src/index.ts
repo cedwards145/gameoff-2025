@@ -1,4 +1,4 @@
-import { Adventurer } from "./adventurer";
+import { Adventurer, AdventurerState } from "./adventurer";
 import { INGREDIENTS } from "./data/ingredients";
 import { RECIPES } from "./data/recipes";
 import {
@@ -23,12 +23,11 @@ import map from "./map.json";
 import { TileMap, TileLayer } from "./ldtk/types";
 import { findPassabilityLayer, findPath, isTilePassable } from "./pathfinding";
 import { getImageResource, load } from "./resources";
+import { getCanvasSize, getScale, getScreenSize } from "./screen";
+import { TextWindow } from "./windows/textWindow";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const context = canvas.getContext("2d") as CanvasRenderingContext2D;
-const WIDTH = 1280;
-const HEIGHT = 720;
-const SCALE = 2;
 
 let path: Position[] | undefined = undefined;
 
@@ -58,6 +57,7 @@ const kitchen = { x: 128, y: 32, width: 64, height: 64 };
 const counter = new Restaurant(128, 128, 64, 64);
 const dungeon = { x: 512, y: 128, width: 64, height: 64 };
 const menuStack: Menu[] = [];
+const goldWindow = new TextWindow(0, 0, 7, 3);
 
 const entities = [
     player,
@@ -84,11 +84,11 @@ function handleMenuClose(menu: Menu) {
     }
 }
 
-canvas.onmousemove = (e: MouseEvent) => {
-    const rect = (e.target as HTMLElement).getBoundingClientRect();
-    mousePosition.x = (e.clientX - rect.left) / SCALE;
-    mousePosition.y = (e.clientY - rect.top) / SCALE;
-};
+// canvas.onmousemove = (e: MouseEvent) => {
+//     const rect = (e.target as HTMLElement).getBoundingClientRect();
+//     mousePosition.x = (e.clientX - rect.left) / SCALE;
+//     mousePosition.y = (e.clientY - rect.top) / SCALE;
+// };
 
 document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
@@ -112,15 +112,38 @@ function update(deltaT: number): void {
         if (isKeyPressed(KeyCode.ESCAPE)) {
             openMenu(new InventoryMenu(player.inventory));
         }
-
-        if (isKeyPressed(KeyCode.R)) {
-            path = findPath(map.levels[0], { x: 3, y: 4 }, { x: 27, y: 12 });
-        }
     } else {
         menuStack.forEach((menu) => menu.update());
     }
 
+    entities.forEach((entity) => {
+        if (
+            entity instanceof Adventurer &&
+            entity.adventurerState == AdventurerState.ADVENTURING
+        ) {
+            dungeonProgress += 0.0001;
+        }
+    });
+
     clearPressedKeys();
+}
+
+let dungeonProgress = 0;
+function drawDungeonProgress(context: CanvasRenderingContext2D) {
+    const screenSize = getScreenSize();
+    context.fillStyle = "white";
+
+    const height = screenSize.height - 64;
+    const indicatorY = 32 + height * dungeonProgress;
+
+    context.fillRect(screenSize.width - 16, 32, 8, height);
+
+    context.fillStyle = "red";
+    context.beginPath();
+    context.moveTo(screenSize.width - 16, indicatorY);
+    context.lineTo(screenSize.width - 24, indicatorY + 4);
+    context.lineTo(screenSize.width - 24, indicatorY - 4);
+    context.fill();
 }
 
 function drawMap(context: CanvasRenderingContext2D, map: TileMap) {
@@ -171,14 +194,31 @@ function drawPath(context: CanvasRenderingContext2D) {
     }
 }
 
+function drawUI(context: CanvasRenderingContext2D) {
+    drawDungeonProgress(context);
+
+    const screenSize = getScreenSize();
+    goldWindow.x = screenSize.width - goldWindow.pixelWidth;
+    goldWindow.text = `${player.money}G`;
+    goldWindow.draw(context);
+}
+
 function draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = "cornflowerblue";
     context.textBaseline = "top";
-    context.fillRect(0, 0, WIDTH, HEIGHT);
+
+    const canvasSize = getCanvasSize();
+    context.fillRect(
+        canvasSize.x,
+        canvasSize.y,
+        canvasSize.width,
+        canvasSize.height
+    );
 
     context.imageSmoothingEnabled = false;
 
-    context.scale(SCALE, SCALE);
+    const scale = getScale();
+    context.scale(scale, scale);
 
     drawMap(context, map);
 
@@ -227,6 +267,7 @@ function draw(context: CanvasRenderingContext2D): void {
     context.fillRect(mousePosition.x - 1, mousePosition.y - 1, 3, 3);
 
     drawPath(context);
+    drawUI(context);
 
     context.resetTransform();
 }

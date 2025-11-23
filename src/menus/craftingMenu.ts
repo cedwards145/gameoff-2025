@@ -1,6 +1,6 @@
 import { Player } from "../player";
+import { getScreenSize } from "../screen";
 import { ListWindow } from "../windows/listWindow";
-import { TextWindow } from "../windows/textWindow";
 import { Menu } from "./menu";
 
 export class CraftingMenu extends Menu {
@@ -14,6 +14,9 @@ export class CraftingMenu extends Menu {
         this.listWindow = new ListWindow(0, 0, 24, 24, []);
         this.listWindow.onSelect = (index) => this.handleCraft(index);
         this.updateChoices();
+
+        const screenSize = getScreenSize();
+        this.listWindow.centerHorizontallyIn(screenSize);
     }
 
     updateChoices() {

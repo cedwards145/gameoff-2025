@@ -1,5 +1,6 @@
 import { Player } from "../player";
 import { Restaurant } from "../restaurant";
+import { getScreenSize } from "../screen";
 import { ListWindow } from "../windows/listWindow";
 import { Menu } from "./menu";
 
@@ -17,6 +18,9 @@ export class OrdersMenu extends Menu {
         this.listWindow = new ListWindow(10, 10, 24, 24, []);
         this.listWindow.onSelect = (index) => this.handleDeliverOrder(index);
         this.updateChoices();
+
+        const screenSize = getScreenSize();
+        this.listWindow.centerHorizontallyIn(screenSize);
     }
 
     updateChoices() {

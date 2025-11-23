@@ -1,5 +1,5 @@
 import { isKeyPressed } from "../input";
-import { KeyCode } from "../types";
+import { KeyCode, Rectangle } from "../types";
 
 export class Menu {
     onClose?: (menu: Menu) => void;

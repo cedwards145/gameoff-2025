@@ -1,9 +1,11 @@
 export interface Item {
     name: string;
+    price: number;
 }
 
 export interface Recipe {
     name: string;
+    price: number;
     ingredients: string[];
 }
 

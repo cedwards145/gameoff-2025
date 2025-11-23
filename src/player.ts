@@ -6,9 +6,11 @@ import { KeyCode, Recipe } from "./types";
 export class Player extends Character {
     recipes: Recipe[] = [];
     inventory: Inventory = new Inventory();
+    money: number;
 
     constructor(x: number, y: number) {
         super(x, y, 16, 16);
+        this.money = 300;
     }
 
     update(deltaT: number): void {
@@ -19,10 +21,6 @@ export class Player extends Character {
                   this.walk(direction, deltaT);
         let moved = false;
 
-        if (isKeyDown(82)) {
-            this.attack();
-            moved = true;
-        }
         if (isKeyDown(65)) {
             move(Direction.LEFT, deltaT);
             moved = true;

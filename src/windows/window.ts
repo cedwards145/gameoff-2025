@@ -1,4 +1,5 @@
 import { getImageResource } from "../resources";
+import { Rectangle } from "../types";
 
 export class Window {
     x: number;
@@ -6,12 +7,16 @@ export class Window {
     width: number;
     height: number;
     padding: number;
+    pixelWidth: number;
+    pixelHeight: number;
 
     constructor(x: number, y: number, width: number, height: number) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.pixelWidth = width * 8;
+        this.pixelHeight = height * 8;
         this.padding = 8;
     }
 
@@ -67,5 +72,10 @@ export class Window {
                 );
             }
         }
+    }
+
+    centerHorizontallyIn(rect: Rectangle) {
+        const xPadding = rect.width - this.pixelWidth;
+        this.x = xPadding / 2;
     }
 }

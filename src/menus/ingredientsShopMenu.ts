@@ -3,6 +3,7 @@ import { TextWindow } from "../windows/textWindow";
 import { Item, Recipe } from "../types";
 import { Menu } from "./menu";
 import { Player } from "../player";
+import { getScreenSize } from "../screen";
 
 export class IngredientsShopMenu extends Menu {
     ingredients: Item[];
@@ -16,25 +17,31 @@ export class IngredientsShopMenu extends Menu {
         this.ingredients = ingredients;
         this.player = player;
 
-        this.listWindow = new ListWindow(
-            10,
-            40,
-            24,
-            24,
-            ingredients.map((ingredient) => ({
-                text: ingredient.name,
-                enabled: true,
-            }))
-        );
+        this.listWindow = new ListWindow(10, 40, 30, 24, []);
         this.listWindow.onSelect = (index) => this.handlePurchase(index);
-        this.descriptionWindow = new TextWindow(10, 10, 24, 3);
+        this.descriptionWindow = new TextWindow(10, 10, 30, 3);
+
+        const screenSize = getScreenSize();
+        this.listWindow.centerHorizontallyIn(screenSize);
+        this.descriptionWindow.centerHorizontallyIn(screenSize);
+
+        this.updateChoices();
+    }
+
+    updateChoices() {
+        this.listWindow.choices = this.ingredients.map((ingredient) => ({
+            text: `${ingredient.name} - ${ingredient.price}G`,
+            enabled: this.player.money >= ingredient.price,
+        }));
     }
 
     handlePurchase(index: number) {
         const ingredient = this.ingredients[index];
         if (ingredient) {
             this.player.inventory.addItem(ingredient, 1);
+            this.player.money -= ingredient.price;
         }
+        this.updateChoices();
     }
 
     update(): void {
