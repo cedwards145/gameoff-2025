@@ -5,6 +5,7 @@ export function load(onComplete: () => void) {
         tileset: new URL("img/tileset.png", import.meta.url).href,
         ui: new URL("img/ui.png", import.meta.url).href,
         player: new URL("img/Master File.png", import.meta.url).href,
+        progress: new URL("img/progress bar.png", import.meta.url).href,
     };
 
     let imagesLoaded = 0;

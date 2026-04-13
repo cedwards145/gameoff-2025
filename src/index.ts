@@ -7,7 +7,6 @@ import {
     handleKeyUp,
     isKeyPressed,
 } from "./input";
-import { Inventory } from "./inventory";
 import { CraftingMenu } from "./menus/craftingMenu";
 import { IngredientsShopMenu } from "./menus/ingredientsShopMenu";
 import { InventoryMenu } from "./menus/inventoryMenu";
@@ -17,11 +16,10 @@ import { RecipeShopMenu } from "./menus/recipeShopMenu";
 import { intersects } from "./physics";
 import { Player } from "./player";
 import { Restaurant } from "./restaurant";
-import { Item, KeyCode, Position } from "./types";
+import { KeyCode, Position } from "./types";
 
 import map from "./map.json";
-import { TileMap, TileLayer } from "./ldtk/types";
-import { findPassabilityLayer, findPath, isTilePassable } from "./pathfinding";
+import { TileMap } from "./ldtk/types";
 import { getImageResource, load } from "./resources";
 import { getCanvasSize, getScale, getScreenSize } from "./screen";
 import { TextWindow } from "./windows/textWindow";
@@ -33,24 +31,6 @@ const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 let path: Position[] | undefined = undefined;
 
 const mousePosition: Position = { x: 0, y: 0 };
-const inventory = new Inventory([
-    // { item: { name: "Dragon's Breath Pepper" }, quantity: 5 },
-    // { item: { name: "Moonlit Mushrooms" }, quantity: 12 },
-    // { item: { name: "Phoenix Feather Herbs" }, quantity: 3 },
-    // { item: { name: "Enchanted Honey" }, quantity: 8 },
-    // { item: { name: "Starlight Salt" }, quantity: 20 },
-    // { item: { name: "Mermaid Tears (Water)" }, quantity: 15 },
-    // { item: { name: "Goblin Garlic" }, quantity: 7 },
-    // { item: { name: "Fairy Dust Sugar" }, quantity: 10 },
-    // { item: { name: "Wyvern Eggs" }, quantity: 4 },
-    // { item: { name: "Crystal Berries" }, quantity: 18 },
-    // { item: { name: "Elven Butter" }, quantity: 6 },
-    // { item: { name: "Shadow Truffles" }, quantity: 2 },
-    // { item: { name: "Unicorn Milk" }, quantity: 9 },
-    // { item: { name: "Thundercloud Flour" }, quantity: 25 },
-    // { item: { name: "Mandrake Root" }, quantity: 5 },
-]);
-
 const player = new Player(104, 104);
 const recipeShop = { x: 32, y: 32, width: 64, height: 64 };
 const ingredients = { x: 32, y: 128, width: 64, height: 64 };
@@ -74,7 +54,7 @@ const entities = [
     new Adventurer(
         540,
         130,
-        "Sid",
+        "Cid",
         map.levels[0],
         counter,
         { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
@@ -89,7 +69,6 @@ const entities = [
         { x: Math.floor(dungeon.x / 16), y: Math.floor(dungeon.y / 16) },
         RECIPES[2]
     ),
-    // new Adventurer(400, 150, map.levels[0], counter, dungeon, RECIPES[1]),
 ];
 
 function openMenu(menu: Menu) {
@@ -103,12 +82,6 @@ function handleMenuClose(menu: Menu) {
         menuStack.splice(index, 1);
     }
 }
-
-// canvas.onmousemove = (e: MouseEvent) => {
-//     const rect = (e.target as HTMLElement).getBoundingClientRect();
-//     mousePosition.x = (e.clientX - rect.left) / SCALE;
-//     mousePosition.y = (e.clientY - rect.top) / SCALE;
-// };
 
 document.onkeydown = handleKeyDown;
 document.onkeyup = handleKeyUp;
@@ -158,18 +131,38 @@ function update(deltaT: number): void {
 let dungeonProgress = 0;
 function drawDungeonProgress(context: CanvasRenderingContext2D) {
     const screenSize = getScreenSize();
-    context.fillStyle = "white";
 
-    const height = screenSize.height - 64;
+    const progressBar = getImageResource("progress");
+
+    const height = progressBar.height;
     const indicatorY = 32 + height * dungeonProgress;
 
-    context.fillRect(screenSize.width - 16, 32, 8, height);
+    context.drawImage(progressBar, screenSize.width - 24, 32);
+
+    context.fillStyle = "black";
+    context.fillRect(
+        screenSize.width - 24,
+        indicatorY + 16,
+        progressBar.width,
+        Math.max(0, progressBar.height * (1 - dungeonProgress) - 16)
+    );
+
+    context.strokeStyle = "black";
+    context.lineWidth = 2;
+    context.stroke;
+    context.rect(
+        screenSize.width - 25,
+        31,
+        progressBar.width + 2,
+        progressBar.height + 2
+    );
+    context.stroke();
 
     context.fillStyle = "red";
     context.beginPath();
-    context.moveTo(screenSize.width - 16, indicatorY);
-    context.lineTo(screenSize.width - 24, indicatorY + 4);
-    context.lineTo(screenSize.width - 24, indicatorY - 4);
+    context.moveTo(screenSize.width - 24, indicatorY);
+    context.lineTo(screenSize.width - 32, indicatorY + 4);
+    context.lineTo(screenSize.width - 32, indicatorY - 4);
     context.fill();
 }
 
