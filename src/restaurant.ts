@@ -1,4 +1,4 @@
-import { Adventurer, AdventurerState } from "./adventurer";
+import { Adventurer } from "./adventurer";
 import { Item, Position } from "./types";
 
 interface Order {

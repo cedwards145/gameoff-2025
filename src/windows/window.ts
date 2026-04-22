@@ -45,6 +45,7 @@ export class Window {
     }
 
     clip(context: CanvasRenderingContext2D) {
+        context.beginPath();
         context.rect(
             this.x + this.padding,
             this.y + this.padding,

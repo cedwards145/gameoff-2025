@@ -4,6 +4,7 @@ import { Recipe } from "../types";
 import { Menu } from "./menu";
 import { Player } from "../player";
 import { getScreenSize } from "../screen";
+import { ConfirmMenu } from "./confirmMenu";
 
 export class RecipeShopMenu extends Menu {
     allRecipes: Recipe[];
@@ -22,7 +23,7 @@ export class RecipeShopMenu extends Menu {
 
         this.descriptionWindow = new TextWindow(10, 10, 47, 3);
         this.listWindow = new ListWindow(10, 40, 23, 24, []);
-        this.listWindow.onSelect = (index) => this.handlePurchase(index);
+        this.listWindow.onSelect = (index) => this.handleSelection(index);
         this.ingredientsWindow = new TextWindow(202, 40, 23, 24);
 
         this.updateRecipes();
@@ -47,13 +48,21 @@ export class RecipeShopMenu extends Menu {
         }
     }
 
-    handlePurchase(index: number) {
-        const recipe = this.recipes[index];
-        if (recipe) {
-            this.player.recipes.push(recipe);
-            this.player.money -= recipe.price;
-        }
-        this.updateRecipes();
+    handleSelection(index: number) {
+        const confirmMenu = new ConfirmMenu();
+
+        confirmMenu.onConfirm = () => {
+            const recipe = this.recipes[index];
+            if (recipe) {
+                this.player.recipes.push(recipe);
+                this.player.money -= recipe.price;
+            }
+            this.updateRecipes();
+            confirmMenu.close();
+        };
+        confirmMenu.onReject = () => confirmMenu.close();
+
+        this.onOpenMenu?.(confirmMenu);
     }
 
     update(): void {

@@ -12,6 +12,7 @@ interface Choice {
 export class ListWindow extends Window {
     choices: Choice[];
     index: number;
+    startIndex: number;
     onSelect?: (index: number) => void;
 
     constructor(
@@ -24,13 +25,33 @@ export class ListWindow extends Window {
         super(x, y, width, height);
         this.choices = choices;
         this.index = 0;
+        this.startIndex = 0;
     }
 
     update(): void {
-        if (isKeyPressed(KeyCode.W)) {
-            this.index--;
-        } else if (isKeyPressed(KeyCode.S)) {
-            this.index++;
+        if (this.choices.length >= 2) {
+            if (isKeyPressed(KeyCode.W)) {
+                this.index--;
+                if (this.index < 0) {
+                    this.index = this.choices.length - 1;
+                    this.startIndex =
+                        this.choices.length -
+                        Math.floor(this.pixelHeight / ROW_HEIGHT);
+                } else if (this.index - this.startIndex < 0) {
+                    this.startIndex--;
+                }
+            } else if (isKeyPressed(KeyCode.S)) {
+                this.index++;
+                if (this.index >= this.choices.length) {
+                    this.index = 0;
+                    this.startIndex = 0;
+                } else if (
+                    this.index - this.startIndex >=
+                    Math.floor(this.pixelHeight / ROW_HEIGHT)
+                ) {
+                    this.startIndex++;
+                }
+            }
         }
 
         if (isKeyPressed(KeyCode.E)) {
@@ -49,15 +70,16 @@ export class ListWindow extends Window {
         context.font = "10px sans";
 
         for (
-            let currentIndex = 0;
+            let currentIndex = this.startIndex;
             currentIndex < this.choices.length;
             currentIndex++
         ) {
+            const yIndex = currentIndex - this.startIndex;
             if (currentIndex === this.index) {
                 context.fillStyle = "lightgrey";
                 context.fillRect(
                     this.x + this.padding,
-                    this.y + this.padding + currentIndex * ROW_HEIGHT,
+                    this.y + this.padding + yIndex * ROW_HEIGHT,
                     this.width * 8 - this.padding * 2,
                     ROW_HEIGHT
                 );
@@ -69,7 +91,7 @@ export class ListWindow extends Window {
             context.fillText(
                 choice.text,
                 this.x + this.padding * 2,
-                this.y + this.padding + 4 + currentIndex * ROW_HEIGHT
+                this.y + this.padding + 4 + yIndex * ROW_HEIGHT
             );
         }
 
