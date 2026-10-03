@@ -1,6 +1,5 @@
 import { IntGridLayer, Level } from "./ldtk/types";
 import { Position } from "./types";
-import map from "./map.json";
 
 export function findPassabilityLayer(level: Level): IntGridLayer {
     for (let index = 0; index < level.layerInstances.length; index++) {
@@ -36,7 +35,7 @@ export function findPath(level: Level, from: Position, to: Position): Position[]
 
     const gScore: Record<number, number> = {};
     gScore[start] = 0
-    
+
     const fScore: Record<number, number> = {};
     fScore[start] = 0
 
@@ -70,7 +69,7 @@ export function findPath(level: Level, from: Position, to: Position): Position[]
     function buildPath(): Position[] {
         let current = goal;
         const path = [];
-        
+
         while (current) {
             path.push(indexToPosition(current, passability.__cWid));
             if (current == start) {

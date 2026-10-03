@@ -1,3 +1,4 @@
+import { PartyState } from "./adventureManager";
 import { Character } from "./character";
 import { Level } from "./ldtk/types";
 import { findPath } from "./pathfinding";
@@ -11,7 +12,27 @@ export enum AdventurerState {
     QUEUEING,
     EATING,
     MOVING_TO_DUNGEON,
+    WAITING_TO_LEAVE,
     ADVENTURING,
+}
+
+function adventurerStateToText(state: AdventurerState): string {
+    switch (state) {
+        case AdventurerState.IDLE:
+            return "Idle";
+        case AdventurerState.MOVING_TO_RESTAURANT:
+            return "Looking for food";
+        case AdventurerState.QUEUEING:
+            return "Waiting for food";
+        case AdventurerState.EATING:
+            return "Eating";
+        case AdventurerState.MOVING_TO_DUNGEON:
+            return "Going on an adventure";
+        case AdventurerState.WAITING_TO_LEAVE:
+            return "Waiting to leave";
+        case AdventurerState.ADVENTURING:
+            return "Adventuring";
+    }
 }
 
 export function adventurerStateToDescription(state: AdventurerState) {
@@ -41,6 +62,8 @@ export class Adventurer extends Character {
 
     timer: Timer;
     path: Position[] | undefined;
+
+    private partyState: PartyState = PartyState.FREE_TIME;
 
     constructor(
         x: number,
@@ -99,12 +122,11 @@ export class Adventurer extends Character {
                 if (this.followPath(deltaT)) {
                     this.path = undefined;
                     this.adventurerState = AdventurerState.QUEUEING;
-                    this.timer.start(10000);
                     this.restaurant.placeOrder(this, this.order);
                 }
                 break;
             case AdventurerState.QUEUEING:
-                if (this.timer.isComplete()) {
+                if (this.partyState === PartyState.PREPARING) {
                     this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
                     this.restaurant.cancelOrder(this, this.order);
                 }
@@ -112,7 +134,9 @@ export class Adventurer extends Character {
                 break;
             case AdventurerState.EATING:
                 if (this.timer.isComplete()) {
-                    this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
+                    if (this.partyState === PartyState.PREPARING) {
+                        this.adventurerState = AdventurerState.MOVING_TO_DUNGEON;
+                    }
                 } else {
                     this.idle();
                 }
@@ -130,12 +154,11 @@ export class Adventurer extends Character {
                 }
                 if (this.followPath(deltaT)) {
                     this.path = undefined;
-                    this.adventurerState = AdventurerState.ADVENTURING;
-                    this.timer.start(5000);
+                    this.adventurerState = AdventurerState.WAITING_TO_LEAVE;
                 }
                 break;
             case AdventurerState.ADVENTURING:
-                if (this.timer.isComplete()) {
+                if (this.partyState === PartyState.FREE_TIME) {
                     this.adventurerState = AdventurerState.MOVING_TO_RESTAURANT;
                     this.foodBuff = 0;
                 } else {
@@ -147,9 +170,27 @@ export class Adventurer extends Character {
         super.update(deltaT);
     }
 
+    draw(context: CanvasRenderingContext2D) {
+        super.draw(context);
+        context.fillText(adventurerStateToText(this.adventurerState), this.x, this.y);
+    }
+
     startEating() {
         this.adventurerState = AdventurerState.EATING;
         this.timer.start(5000);
         this.foodBuff = 50;
+    }
+
+    setPartyState(partyState: PartyState) {
+        this.partyState = partyState;
+
+        switch (partyState) {
+            case PartyState.ADVENTURING:
+                this.adventurerState = AdventurerState.ADVENTURING;
+                break;
+            case PartyState.FREE_TIME:
+                this.adventurerState = AdventurerState.MOVING_TO_RESTAURANT;
+                break;
+        }
     }
 }

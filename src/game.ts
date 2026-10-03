@@ -1,17 +1,18 @@
+import { AdventureManager } from "./adventureManager";
 import { Adventurer, AdventurerState } from "./adventurer";
 import { Character } from "./character";
 import { INGREDIENTS } from "./data/ingredients";
 import { RECIPES } from "./data/recipes";
-import { clearPressedKeys, isKeyPressed } from "./input";
+import { isKeyPressed } from "./input";
 import { TileMap } from "./ldtk/types";
 import { AdventurerMenu } from "./menus/adventurerMenu";
-import { ConfirmMenu } from "./menus/confirmMenu";
 import { CraftingMenu } from "./menus/craftingMenu";
 import { IngredientsShopMenu } from "./menus/ingredientsShopMenu";
 import { InventoryMenu } from "./menus/inventoryMenu";
 import { Menu } from "./menus/menu";
 import { OrdersMenu } from "./menus/ordersMenu";
 import { RecipeShopMenu } from "./menus/recipeShopMenu";
+import { TestMenu } from "./menus/testMenu";
 import { intersects } from "./physics";
 import { Player } from "./player";
 import { getImageResource } from "./resources";
@@ -19,6 +20,10 @@ import { Restaurant } from "./restaurant";
 import { getCanvasSize, getScale, getScreenSize } from "./screen";
 import { KeyCode, Rectangle } from "./types";
 import { TextWindow } from "./windows/textWindow";
+
+
+const testMenu = new TestMenu();
+
 
 export class Game {
     map: TileMap;
@@ -32,6 +37,8 @@ export class Game {
     dungeon: Rectangle;
     dungeonProgress: number;
     goldWindow: TextWindow;
+
+    adventurerManager: AdventureManager;
 
     constructor(map: TileMap) {
         this.map = map;
@@ -48,8 +55,7 @@ export class Game {
 
         this.dungeonProgress = 0;
 
-        this.entities = [
-            this.player,
+        const adventurers = [
             new Adventurer(
                 512,
                 150,
@@ -86,7 +92,14 @@ export class Game {
                 },
                 RECIPES[2]
             ),
+        ]
+
+        this.entities = [
+            this.player,
+            ...adventurers
         ];
+
+        this.adventurerManager = new AdventureManager(adventurers);
     }
 
     openMenu(menu: Menu) {
@@ -152,14 +165,7 @@ export class Game {
             this.menuStack[this.menuStack.length - 1].update();
         }
 
-        this.entities.forEach((entity) => {
-            if (
-                entity instanceof Adventurer &&
-                entity.adventurerState == AdventurerState.ADVENTURING
-            ) {
-                this.dungeonProgress += 0.0001;
-            }
-        });
+        this.adventurerManager.update(deltaT);
     }
 
     drawDungeonProgress(context: CanvasRenderingContext2D) {
@@ -254,6 +260,21 @@ export class Game {
         this.goldWindow.x = screenSize.width - this.goldWindow.pixelWidth;
         this.goldWindow.text = `${this.player.money}G`;
         this.goldWindow.draw(context);
+
+        this.drawOrderTickets(context);
+    }
+
+    drawOrderTickets(context: CanvasRenderingContext2D) {
+        for (let index = 0; index < this.restaurant.orders.length; index++) {
+            const order = this.restaurant.orders[index];
+
+            const y = 25 + (index * 50);
+
+            context.fillStyle = "white";
+            context.fillRect(0, y, 100, 30);
+            context.fillStyle = "black";
+            context.fillText(order.item.name, 0, y);
+        }
     }
 
     draw(context: CanvasRenderingContext2D): void {
@@ -272,6 +293,10 @@ export class Game {
 
         const scale = getScale();
         context.scale(scale, scale);
+
+        testMenu.draw(context);
+        context.resetTransform();
+        return;
 
         this.drawMap(context, this.map);
 

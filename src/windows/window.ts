@@ -20,7 +20,7 @@ export class Window {
         this.padding = 8;
     }
 
-    update(): void {}
+    update(): void { }
 
     sourceFromCoords(x: number, y: number) {
         if (x === 0 && y === 0) {
@@ -56,23 +56,17 @@ export class Window {
     }
 
     draw(context: CanvasRenderingContext2D): void {
-        const ui = getImageResource("ui");
-        for (let x = 0; x < this.width; x++) {
-            for (let y = 0; y < this.height; y++) {
-                const source = this.sourceFromCoords(x, y);
-                context.drawImage(
-                    ui,
-                    source.x + 5 * 32,
-                    source.y + 2 * 32,
-                    8,
-                    8,
-                    this.x + x * 8,
-                    this.y + y * 8,
-                    8,
-                    8
-                );
-            }
-        }
+        context.save();
+        context.shadowColor = "rgba(0, 0, 0, 0.6)";
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 8;
+        context.shadowBlur = 24;
+        context.beginPath();
+        context.roundRect(this.x, this.y, this.width * 8, this.height * 8, 16);
+
+        context.fillStyle = "lightgray"
+        context.fill();
+        context.restore();
     }
 
     centerHorizontallyIn(rect: Rectangle) {
