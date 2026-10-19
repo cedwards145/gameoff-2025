@@ -17,5 +17,5 @@ export class Menu {
         this.onClose?.(this);
     }
 
-    draw(context: CanvasRenderingContext2D) {}
+    draw(_context: CanvasRenderingContext2D) {}
 }

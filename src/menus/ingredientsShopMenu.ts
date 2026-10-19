@@ -1,6 +1,6 @@
 import { ListWindow } from "../windows/listWindow";
 import { TextWindow } from "../windows/textWindow";
-import { Item, Recipe } from "../types";
+import { Item } from "../types";
 import { Menu } from "./menu";
 import { Player } from "../player";
 import { getScreenSize } from "../screen";

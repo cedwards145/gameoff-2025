@@ -7,7 +7,7 @@ export class Image extends UINode {
         super();
     }
 
-    measure(bounds: Rectangle, context: CanvasRenderingContext2D): Size {
+    measure(bounds: Rectangle, _context: CanvasRenderingContext2D): Size {
         return {
             height: this.height ?? bounds.height,
             width: this.width ?? bounds.width

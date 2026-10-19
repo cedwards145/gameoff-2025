@@ -14,6 +14,8 @@ export class CookingVessel {
         if (matchingRecipes.length > 0) {
             return matchingRecipes[0];
         }
+
+        return undefined;
     }
 
     cook(ingredients: Food[]): Food {

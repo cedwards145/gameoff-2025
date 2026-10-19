@@ -1,5 +1,5 @@
 import { AdventureManager } from "./adventureManager";
-import { Adventurer, AdventurerState } from "./adventurer";
+import { Adventurer } from "./adventurer";
 import { Character } from "./character";
 import { INGREDIENTS } from "./data/ingredients";
 import { RECIPES } from "./data/recipes";

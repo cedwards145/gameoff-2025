@@ -48,6 +48,8 @@ export function adventurerStateToDescription(state: AdventurerState) {
         case AdventurerState.MOVING_TO_DUNGEON:
         case AdventurerState.ADVENTURING:
             return "Adventuring";
+        case AdventurerState.WAITING_TO_LEAVE:
+            return "Waiting to leave";
     }
 }
 

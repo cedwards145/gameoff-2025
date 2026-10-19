@@ -30,9 +30,9 @@ export class CraftingMenu extends Menu {
         const recipe = this.player.recipes[index];
         if (recipe) {
             recipe.ingredients.forEach((ingredient) =>
-                this.player.inventory.removeItem({ name: ingredient }, 1)
+                this.player.inventory.removeItem(ingredient, 1)
             );
-            this.player.inventory.addItem({ name: recipe.name }, 1);
+            this.player.inventory.addItem({ name: recipe.name, price: 0 }, 1);
         }
         this.updateChoices();
     }

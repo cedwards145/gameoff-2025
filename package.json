@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build src/index.html --public-url ./",
+    "tsc": "tsc"
   },
   "author": "",
   "license": "ISC",

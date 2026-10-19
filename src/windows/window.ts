@@ -1,4 +1,3 @@
-import { getImageResource } from "../resources";
 import { Rectangle } from "../types";
 
 export class Window {

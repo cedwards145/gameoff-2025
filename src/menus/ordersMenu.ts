@@ -26,14 +26,14 @@ export class OrdersMenu extends Menu {
     updateChoices() {
         this.listWindow.choices = this.restaurant.orders.map((order) => ({
             text: order.item.name,
-            enabled: this.player.inventory.getQuantity(order.item) > 0,
+            enabled: this.player.inventory.getQuantity(order.item.name) > 0,
         }));
     }
 
     handleDeliverOrder(index: number) {
         const order = this.restaurant.orders[index];
         this.restaurant.deliverOrder(order);
-        this.player.inventory.removeItem(order.item, 1);
+        this.player.inventory.removeItem(order.item.name, 1);
         this.player.money += 350;
         this.updateChoices();
     }

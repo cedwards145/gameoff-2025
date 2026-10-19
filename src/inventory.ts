@@ -1,4 +1,4 @@
-import { Item, KeyCode, Recipe } from "./types";
+import { Item, Recipe } from "./types";
 
 interface ItemQuantity {
     item: Item;
@@ -12,9 +12,9 @@ export class Inventory {
         this.itemQuantities = itemQuantities;
     }
 
-    getQuantity(item: Item): number {
+    getQuantity(itemName: string): number {
         const matches = this.itemQuantities.filter(
-            (itemQuantity) => itemQuantity.item.name === item.name
+            (itemQuantity) => itemQuantity.item.name === itemName
         );
 
         if (matches.length > 0) {
@@ -29,6 +29,17 @@ export class Inventory {
             const itemQuantity = this.itemQuantities[index];
             if (itemQuantity.item.name === item.name) {
                 itemQuantity.quantity += quantity;
+            }
+        }
+
+        this.itemQuantities.push({ item: item, quantity: quantity });
+    }
+
+    removeItem(itemName: string, quantity: number) {
+        for (let index = 0; index < this.itemQuantities.length; index++) {
+            const itemQuantity = this.itemQuantities[index];
+            if (itemQuantity.item.name === itemName) {
+                itemQuantity.quantity -= quantity;
 
                 if (itemQuantity.quantity <= 0) {
                     this.itemQuantities.splice(index, 1);
@@ -36,17 +47,11 @@ export class Inventory {
                 return;
             }
         }
-
-        this.itemQuantities.push({ item: item, quantity: quantity });
-    }
-
-    removeItem(item: Item, quantity: number) {
-        this.addItem(item, -1 * quantity);
     }
 
     canCraft(recipe: Recipe): boolean {
         return recipe.ingredients
-            .map((ingredient) => this.getQuantity({ name: ingredient }))
+            .map((ingredient) => this.getQuantity(ingredient))
             .every((quantity) => quantity > 0);
     }
 }

@@ -6,7 +6,7 @@ export class Grid extends UINode {
         super();
     }
 
-    measure(bounds: Rectangle, context: CanvasRenderingContext2D): Size {
+    measure(bounds: Rectangle, _context: CanvasRenderingContext2D): Size {
         return bounds;
     }
 
