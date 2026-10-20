@@ -76,7 +76,7 @@ export class ListWindow extends Window {
         ) {
             const yIndex = currentIndex - this.startIndex;
             if (currentIndex === this.index) {
-                context.fillStyle = "lightgrey";
+                context.fillStyle = "white";
                 context.fillRect(
                     this.x + this.padding,
                     this.y + this.padding + yIndex * ROW_HEIGHT,

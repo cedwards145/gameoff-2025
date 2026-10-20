@@ -294,10 +294,6 @@ export class Game {
         const scale = getScale();
         context.scale(scale, scale);
 
-        testMenu.draw(context);
-        context.resetTransform();
-        return;
-
         this.drawMap(context, this.map);
 
         // Recipe Shop
